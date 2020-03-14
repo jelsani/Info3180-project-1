@@ -1,0 +1,41 @@
+{% extends "base.html" %} 
+{% block main %}  
+{% if user %} 
+<div style="padding-right:200px">
+    <div class="row" >
+        <div class="border border-primary" style="width:500px;height:350px;">  
+        <div class="row" style="">
+            <div class="col">
+                <img src="{{ url_for('static', filename='uploads/' + user.profile_picture) }}" class="mr-3 mt-3 rounded-circle" style="width:200px;height:200px;"/> 
+            </div> 
+            <div class="col" style="justify-items: center;">
+                <h5>{{ user.first_name }} {{ user.last_name }}</h5>
+                <p>{{ user.gender }}</p>
+                <p>{{ user.location }}</p>  
+            </div> 
+        </div> 
+        <div class="about"> 
+            <h5>About Me</h5> 
+            <p>{{ user.biography }}</p><br>
+        </div>
+        <div class="row"> 
+            <div class="row"> 
+                <div class="col">
+                    <button class="btn btn-primary">Follow</button> 
+                </div> 
+                <div class="col">
+                    <button class="btn-success">Send Message</button> 
+                </div>
+            </div>  
+            <div class="col"></div> 
+            
+        </div>
+        </div> 
+    </div>
+             <p>
+                
+             </p>
+           
+</div>
+{% endif %}
+{% endblock %}

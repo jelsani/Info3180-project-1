@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block main %} 
+<h1>Add Profile</h1> 
+<form action="/profile" method='POST' enctype = "multipart/form-data"> 
+{{ form.hidden_tag() }} 
+ <div>
+     {{ form.FirstName.label }} 
+     {{ form.FirstName(class='form-control') }} 
+ </div> 
+ <div>
+     {{ form.LastName.label }}
+     {{ form.LastName(class='form-control') }}
+ </div> 
+ <div>
+     {{ form.Gender.label }} 
+     {{ form.Gender(class='form-control') }}
+ </div> 
+ <div>
+     {{ form.Email.label }}
+     {{ form.Email(class='form-control') }}
+ </div> 
+ <div>
+     {{ form.Location.label }}
+     {{ form.Location(class='form-control') }}
+ </div> 
+ <div>
+     {{ form.Biography.label }}
+     {{ form.Biography( class='form-control') }}
+ </div> 
+ <div>
+     {{ form.ProfilePicture.label }}
+     {{ form.ProfilePicture(class='form-control') }} 
+     
+ </div>  
+ 
+ <div>
+ <button type="submit" name="submit" class="btn btn-primary">Add Profile</button> 
+ 
+ </div>
+{% endblock %}

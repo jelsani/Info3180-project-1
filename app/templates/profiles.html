@@ -1,0 +1,35 @@
+{% extends "base.html" %} 
+{% block main %}
+<h1>Profiles</h1> 
+{% if users %} 
+{% for user in users %}
+<div class="border border-primary">  
+    <div class="row" style="">
+        <div class="col"> 
+            <div clas="d-flex justify-content-center" style="padding-right: 55px;">
+                <img src="{{ url_for('static', filename='uploads/' + user.profile_picture) }}" class="mr-3 mt-3 rounded-circle" style="width:200px;height:200px;"/>
+            </div>
+        </div> 
+        <div class="col" style="justify-items: center;"> 
+            <div clas="d-flex justify-content-center" style="padding-top:55px;">
+                <h4>{{ user.first_name }} {{ user.last_name }}</h4>
+                <p>{{ user.gender }}</p>
+                <p>{{ user.location }}</p> 
+            </div>
+        </div> 
+        <div class="col"> 
+            <div clas="d-flex justify-content-center" style="padding-top: 55px;">
+                <button class="btn btn-primary" onclick="location.href='{{ url_for('fullprofile', userid=user.id) }}'" >View Profile</button> 
+
+            </div>
+        </div> 
+    </div> 
+</div>
+             <p>
+                
+             </p>
+{% endfor %}
+
+{% endif %}
+
+{% endblock %}
